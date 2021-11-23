@@ -15,3 +15,22 @@ const Obj2 = {
   gender: "male"
 };
 console.log(Obj2);
+
+// REST operator
+
+const filter = (...params) => {
+  return params.filter((e, i) => checkLimit(e, i));
+};
+
+function checkLimit(nb, i) {
+  return nb > 18 && i >= 1;
+}
+
+console.log("filter => " + filter(5, 19, "paul", 33));
+
+// syntaxe 2
+const filter2 = (...params) => {
+  return params.filter((e, i) => e > 1 && i >= 1);
+};
+
+console.log("filter2 => " + filter2(5, 18, "paul", 33));
